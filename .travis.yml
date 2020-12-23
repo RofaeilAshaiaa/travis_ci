@@ -14,6 +14,7 @@ before_script:
   - echo "no tests"
 
 script:
+  - echo $FAVORITE_FOOD # for testing enviroment varaible is set
   - docker --version # print the version for logging
   - docker build -t simple-node --build-arg FAVORITE_FOOD=${FAVORITE_FOOD} .
   - docker tag simple-node rofaeilashaiaa/simple-node:latest
